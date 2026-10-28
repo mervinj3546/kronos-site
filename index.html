@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kronos: options levels, flow and setups on one screen</title>
+  <meta name="description" content="Kronos scans gamma exposure, options flow and trend structure across hundreds of US tickers and puts the levels that matter on one screen. Private beta.">
+  <meta property="og:title" content="Kronos: options levels, flow and setups on one screen">
+  <meta property="og:description" content="Gamma levels, whale flow and trend scans in one research dashboard. Private beta.">
+  <meta property="og:image" content="https://mervinj3546.github.io/kronos-site/assets/shots/home.jpg">
+  <meta property="og:url" content="https://mervinj3546.github.io/kronos-site/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0C0A08">
+  <link rel="icon" href="assets/kronos-logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#top" aria-label="Kronos home">
+        <img src="assets/kronos-logo.svg" alt="Kronos" width="94" height="38">
+      </a>
+      <nav class="nav__links" aria-label="Sections">
+        <a href="#how">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#scorecard">Scorecards</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn btn--primary btn--sm" href="#beta">Sign up for beta</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero__copy">
+        <a class="pill" href="#beta"><span class="pill__tag">Beta</span> Private beta, opening in small groups</a>
+        <h1>See where the options market is leaning.</h1>
+        <p class="lede">Kronos scans gamma exposure, options flow and trend structure across hundreds of US tickers, and puts the levels that matter on one screen.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--primary" href="#beta">Sign up for beta</a>
+          <a class="btn btn--ghost" href="#how">See how it works</a>
+        </div>
+        <p class="fine">Research tool. Not investment advice.</p>
+      </div>
+      <figure class="frame frame--hero reveal">
+        <div class="frame__bar"><span></span><span></span><span></span><em>kronos / market overview</em></div>
+        <img src="assets/shots/home.jpg" alt="Kronos Market Overview: SPY, QQQ and IWM trend tags and a Key Levels table with bias, spot, target, flip and day king for each ticker" width="2200" height="1375" fetchpriority="high">
+      </figure>
+    </section>
+
+    <section class="section" id="how">
+      <p class="eyebrow">How it works</p>
+      <h2>Scan, rank, track.</h2>
+      <p class="section__lede">Every setup moves through three stages, and you can always see where each one stands.</p>
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="step__num">01</span>
+          <h3>Scan</h3>
+          <p>Every 15 minutes in market hours, Kronos reads options chains and unusual flow for its ticker universe.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step__num">02</span>
+          <h3>Rank</h3>
+          <p>Setups get a direction, a target and a stop from gamma levels and trend structure, then sort by how close and how clean they are.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step__num">03</span>
+          <h3>Track</h3>
+          <p>Each pick is saved with its target and stop and scored after the fact, so you can see which setups actually work.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section" id="features">
+      <p class="eyebrow">Features</p>
+      <h2>One dashboard. Five ways to read the tape.</h2>
+
+      <article class="feature reveal">
+        <div class="feature__copy">
+          <p class="feature__tag">GEX Scanner</p>
+          <h3>Gamma levels for every name on your list.</h3>
+          <p>Spot, target, stop, wall and king expiry for each ticker, with the index trend on top so you know if the market agrees.</p>
+          <ul class="ticks">
+            <li>Calls, puts or only setups aligned with trend</li>
+            <li>Same-day touch odds for each target</li>
+            <li>Refreshes on its own during the session</li>
+          </ul>
+        </div>
+        <figure class="frame"><img src="assets/shots/june-gex.jpg" alt="GEX Scanner table with ticker, side, spot, target, stop, king and expiry columns" width="2200" height="1375" loading="lazy"></figure>
+      </article>
+
+      <article class="feature feature--flip reveal">
+        <div class="feature__copy">
+          <p class="feature__tag">Swing Scanner</p>
+          <h3>From 180 names to the few worth a look.</h3>
+          <p>A funnel shows how many tickers pass each gate: GEX, daily EMA, 30-minute EMA, Keltner position. What is left is ranked.</p>
+          <ul class="ticks">
+            <li>Bullish, bearish and highest-score views</li>
+            <li>Filter summary for every rejected name</li>
+            <li>Market-closed state shows the last scan, never stale data as live</li>
+          </ul>
+        </div>
+        <figure class="frame"><img src="assets/shots/mega-scanner.jpg" alt="Swing Scanner with a funnel of 180 scanned, 28 GEX pass, 28 daily EMA, 11 30-minute EMA, 8 Keltner and 8 passed" width="2200" height="1375" loading="lazy"></figure>
+      </article>
+
+      <article class="feature reveal">
+        <div class="feature__copy">
+          <p class="feature__tag">Whale Flow</p>
+          <h3>Big options money, sorted by premium.</h3>
+          <p>Unusual options activity with aggressor detection. Repeat flow groups tickers that keep printing, so one large order doesn't drown out the pattern.</p>
+          <ul class="ticks">
+            <li>Calls, puts, trend-aligned and high-watch filters</li>
+            <li>Volume to open interest on every print</li>
+            <li>Sold-put flow tagged apart from bearish buys</li>
+          </ul>
+        </div>
+        <figure class="frame"><img src="assets/shots/whale-flow.jpg" alt="Whale Flow page with repeat flow tiles for QQQ, SPY and META and a table of large options prints" width="2200" height="1375" loading="lazy"></figure>
+      </article>
+
+
+      <div class="minis">
+        <article class="mini reveal">
+          <figure class="frame"><img src="assets/shots/dot-scanner.jpg" alt="Dot Scanner table with score, signal, trend and relative volume" width="2200" height="1375" loading="lazy"></figure>
+          <h3>Dot Scanner</h3>
+          <p>Price and volume trend context: which names are being bought or sold with size over 10 and 30 days.</p>
+        </article>
+        <article class="mini reveal">
+          <figure class="frame"><img src="assets/shots/gex-lookup.jpg" alt="GEX Lookup cards for SPY, QQQ and IWM with call wall, put wall and distance" width="2200" height="1375" loading="lazy"></figure>
+          <h3>GEX Lookup</h3>
+          <p>Type any ticker for its call wall, put wall, gamma flip and how far price is from each.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--band" id="scorecard">
+      <div class="band">
+        <div>
+          <p class="eyebrow">Scorecards</p>
+          <h2>Built to be checked.</h2>
+          <p class="section__lede">Every pick is saved with the target and stop it showed. Later, Kronos scores it: did price reach the target, how fast, and before or after the stop. Signals that don't hold up get cut, not hidden.</p>
+        </div>
+        <ul class="facts">
+          <li><strong>Saved</strong><span>Each pick, as you saw it, with its level and time</span></li>
+          <li><strong>Scored</strong><span>Target first, stop first, or neither by expiry</span></li>
+          <li><strong>Shown</strong><span>Hit rates sit on the page next to the picks</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="beta">
+      <div class="signup reveal">
+        <div class="signup__copy">
+          <p class="eyebrow">Private beta</p>
+          <h2>Get on the list.</h2>
+          <p>We're letting traders in a few at a time. Leave your email and we'll write when your spot opens. Nothing else goes to that address.</p>
+        </div>
+        <form class="form" id="beta-form" data-endpoint="https://aikronos.trade/beta/signup" data-visit="https://aikronos.trade/beta/visit" novalidate>
+          <label class="field">
+            <span>Email</span>
+            <input type="email" name="email" autocomplete="email" required placeholder="you@example.com">
+          </label>
+          <label class="field">
+            <span>How do you trade?</span>
+            <select name="trading" required>
+              <option value="" selected disabled>Choose one</option>
+              <option value="day">Mostly day trades</option>
+              <option value="swing">Mostly swings</option>
+              <option value="both">Both</option>
+            </select>
+          </label>
+          <label class="field field--hp" aria-hidden="true">
+            <span>Leave this empty</span>
+            <input type="text" name="company" tabindex="-1" autocomplete="off">
+          </label>
+          <button class="btn btn--primary btn--block" type="submit">Sign up for beta</button>
+          <p class="form__msg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <p class="eyebrow">FAQ</p>
+      <h2>Questions</h2>
+      <div class="faq">
+        <details>
+          <summary>What does Kronos cover?</summary>
+          <p>US stocks and ETFs with listed options. The scanners run on a fixed universe of liquid names; GEX Lookup works on any optionable ticker.</p>
+        </details>
+        <details>
+          <summary>Does Kronos place trades?</summary>
+          <p>No. Kronos is a research dashboard. It doesn't connect to your brokerage account and never sends orders.</p>
+        </details>
+        <details>
+          <summary>How often does the data update?</summary>
+          <p>Scans run every 15 minutes during US market hours. Outside the session, pages show the last completed scan and say so.</p>
+        </details>
+        <details>
+          <summary>Is this investment advice?</summary>
+          <p>No. Kronos shows levels and historical statistics. It does not know your situation, and past hit rates don't promise future results.</p>
+        </details>
+        <details>
+          <summary>When do I get in?</summary>
+          <p>Invites go out in small groups. Sign up above and we'll email you when your spot opens.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <img src="assets/kronos-logo.svg" alt="Kronos" width="80" height="32">
+      <p class="footer__legal">Kronos is a research tool for informational purposes only. Nothing on this site or in the product is investment advice or a recommendation to buy or sell any security. Options trading carries substantial risk and is not suitable for every investor.</p>
+      <p class="footer__meta">&copy; 2026 Kronos &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </div>
+  </footer>
+
+  <script src="site.js" defer></script>
+</body>
+</html>
