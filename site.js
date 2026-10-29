@@ -30,10 +30,13 @@
   // ?src= tags where the visitor came from (x for tweets); the server cleans it.
   var source = new URLSearchParams(location.search).get("src") || "direct";
 
-  // Count the visit by source. sendBeacon posts text/plain, so no CORS preflight.
-  var visitUrl = form.getAttribute("data-visit");
-  if (visitUrl && navigator.sendBeacon) {
-    try { navigator.sendBeacon(visitUrl, JSON.stringify({ source: source })); } catch (e) { /* not critical */ }
+  // data-endpoint is the Google Apps Script web app (apps-script/Code.gs) that
+  // writes to the signup Sheet. It takes text/plain JSON, so no CORS preflight.
+  var endpoint = form.getAttribute("data-endpoint");
+
+  // Count the visit by source.
+  if (endpoint && navigator.sendBeacon) {
+    try { navigator.sendBeacon(endpoint, JSON.stringify({ type: "visit", source: source })); } catch (e) { /* not critical */ }
   }
 
   function say(text, kind) {
@@ -51,7 +54,6 @@
     if (!style) { say("Choose how you trade.", "err"); form.trading.focus(); return; }
     if (form.company.value) { say("Thanks. You're on the list.", "ok"); return; } // honeypot
 
-    var endpoint = form.getAttribute("data-endpoint");
     if (!endpoint) { say("Signup isn't connected yet. Please check back soon.", "err"); return; }
 
     button.disabled = true;
@@ -59,14 +61,15 @@
     fetch(endpoint, {
       method: "POST",
       headers: { "Content-Type": "text/plain" }, // simple request, no CORS preflight
-      body: JSON.stringify({ email: email, style: style, source: source })
+      body: JSON.stringify({ type: "signup", email: email, style: style, source: source })
     }).then(function (response) {
-      if (!response.ok) {
-        return response.json().catch(function () { return {}; }).then(function (data) {
-          var error = new Error(data.error || "");
-          error.fromServer = true;
-          throw error;
-        });
+      return response.json();
+    }).then(function (data) {
+      // Apps Script always answers 200; the result is in data.ok.
+      if (!data || !data.ok) {
+        var error = new Error((data && data.error) || "");
+        error.fromServer = true;
+        throw error;
       }
       form.reset();
       say("Thanks. You're on the list, and we'll email you when your spot opens.", "ok");
